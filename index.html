@@ -14,7 +14,40 @@
 	<link rel="stylesheet" type="text/css" href="./vex/vex-theme-plain.css">
     <style type="text/css">
 
+    	html {
+    		/*background: #3B403A;*/
+			background: url('./wood.jpeg') no-repeat center center fixed; 
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+    	}
 
+    	h2 + h3 {
+    		margin-top: 0 !important;
+    	}
+
+    	h1.title {
+    		color: white !important;
+    	}
+
+    	.title {
+    		font-weight: bold !important;
+    		margin-bottom: 0.5em !important;
+    	}
+
+    	.box {
+    		background: rgba(255, 255, 255, 0.95);
+    	}
+
+    	#create-view {
+    		display: none;
+    	}
+
+    	.is-centered {
+    		display: block;
+    		margin: 0 auto;
+    	}
     	
     </style>
 </head>
@@ -23,7 +56,39 @@
 	<section class="section">
 		<div class="container">
 			<div class="content">
-				<h1>Welcome to Avalon!</h1>
+				<h1 class="title is-1 has-text-centered">Welcome to Avalon!</h1>
+				<div id="create-view" class="box">
+					<h2 class="title">New Game</h2>
+					<button id="start-game" class="button is-primary">Start</button>
+					<button id="join-game" class="button is-primary is-outlined">Join</button>
+				</div>
+				<div id="game-view">
+					<button class="button is-white is-outlined is-centered">Game Code: <span id="code">?</span></button>
+					<div id="quest-view"></div>
+					<br>
+					<div id="player-view"></div>
+					<br>
+					<div class="columns">
+						<div class="column is-4">
+							<div class="box">
+								<h2 class="title">Voting</h2>
+								<button data-vote="approve" class="button is-success">Approve</button>
+								<button data-vote="reject" class="button is-danger">Reject</button>
+								<button data-vote="clear" class="button is-primary is-outlined">Clear Vote</button>
+							</div>
+						</div>
+						<div class="column is-8">
+							<div class="box">
+								<h2 class="title">Gameplay</h2>
+								<button id="quest" class="button is-primary">Start Quest</button>
+								<button id="name" class="button is-primary is-outlined">Change Name</button>
+								<button id="shuffle" class="button is-danger">Shuffle Roles</button>
+								<button id="roles" class="button is-danger is-outlined">Change Roles</button>
+								<button id="clear" class="button is-danger is-outlined">Leave Game</button>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
